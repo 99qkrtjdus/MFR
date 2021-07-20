@@ -15,7 +15,7 @@ print('connected by', r_host, r_port)
 while True:
     #상대방 메시지 수신
     data = c_sock.recv(BUFSIZE)
-    if not data: #연결이 종료되었으면
+    if data.decode() == 'stop' :
         break
     print("Received message: ", data.decode())
 
